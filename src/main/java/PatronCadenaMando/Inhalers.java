@@ -16,6 +16,7 @@ public class Inhalers {
 
         String inhaName = null;
         String inhaImage = null;
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(NAME_FIELD_TAGNAME)) {
@@ -28,6 +29,4 @@ public class Inhalers {
         }
         return inhaName + FIELD_SEPARATOR + inhaImage;
     }
-
-
 }

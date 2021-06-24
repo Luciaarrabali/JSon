@@ -59,9 +59,9 @@ public class DatabaseJSonReader {
 			} else if (name.equals(RESCUEMEDPRES_TAGNAME)) {
 				readData.append(readRescueMedicinePresentations(reader)).append("\n");
 			} else if (name.equals(ACTIVEINGREDIENTS_TAGNAME)) {
-				readData.append(readRescueMedicinePresentations(reader)).append("\n");
+				readData.append(readActiveIngredients(reader)).append("\n");
 			} else if (name.equals(PHYSIOTHERAPIES_TAGNAME)) {
-				readData.append(readRescueMedicinePresentations(reader)).append("\n");
+				readData.append(readPhysiotherapies(reader)).append("\n");
 			} else if (name.equals(INHALERS_TAGNAME)) {
 				readData.append(readInhalers(reader)).append("\n");
 			} else if (name.equals(POSOLOGIES_TAGNAME)) {
@@ -102,7 +102,9 @@ public class DatabaseJSonReader {
 	// Parses the contents of a medicine.
 	private String readMedicineEntry(JsonReader reader) throws IOException {
 		// reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
+
 		String medName = null;
+
 		while (reader.hasNext()) {
 			String name = reader.nextName();
 			if (name.equals(NAME_FIELD_TAGNAME)) {
@@ -130,10 +132,12 @@ public class DatabaseJSonReader {
 
 	// Parses the contents of a rescue medicine presentation entry
 	private String readRescueMedicinePresentationEntry(JsonReader reader) throws IOException {
+
 		String medRef = null;
 		String aiRef = null;
 		String inhRef = null;
 		String dose = null;
+
 		while (reader.hasNext()) {
 			String name = reader.nextName();
 			if (name.equals(MEDREF_FIELD_TAGNAME)) {
@@ -205,8 +209,10 @@ public class DatabaseJSonReader {
 	}
 
 	private String readPhysiotherapyEntry(JsonReader reader) throws IOException {
+
 		String physioName = null;
 		String physioImage = null;
+
 		while (reader.hasNext()) {
 			String name = reader.nextName();
 			if (name.equals(NAME_FIELD_TAGNAME)) {
