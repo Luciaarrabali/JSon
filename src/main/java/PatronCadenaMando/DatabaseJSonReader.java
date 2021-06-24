@@ -26,7 +26,7 @@ public class DatabaseJSonReader {
         StringBuffer readData = new StringBuffer();
         while (reader.hasNext()) {
             String name = reader.nextName();
-            readData.append(chain.readCategory(reader, name)).append("\n");
+            readData.append(chain.readChain(reader, name)).append("\n");
         }
 
         reader.endObject();

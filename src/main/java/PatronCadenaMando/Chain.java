@@ -12,7 +12,7 @@ public abstract class Chain {
         successor = suc;
     }
 
-    protected StringBuffer readCategory(JsonReader reader, String name) throws IOException {
+    protected StringBuffer readChain(JsonReader reader, String name) throws IOException {
         if (name.equals(chainName)) {
             StringBuffer objectData = new StringBuffer();
             reader.beginArray();
@@ -25,7 +25,7 @@ public abstract class Chain {
             reader.endArray();
             return objectData;
         } else {
-            return successor.readCategory(reader, name);
+            return successor.readChain(reader, name);
         }
     }
     protected abstract String readObjectEntry(JsonReader reader) throws IOException;
