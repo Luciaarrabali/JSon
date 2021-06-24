@@ -4,19 +4,18 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 
-public class Posologies {
+public class Posologies extends Chain{
     private static final String POSOLOGIES_TAGNAME = "posologies";
-
     private static final String DESCRIPTION_FIELD_TAGNAME = "description";
 
-    protected String readObjectEntry(String jsonFileName) throws IOException {
-        InputStream usersIS = new FileInputStream(new File(jsonFileName));
-        JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
+    public Posologies(Chain suc) {
+        super(suc);
+        chainName = new String(POSOLOGIES_TAGNAME);
+    }
+
+    protected String readObjectEntry(JsonReader reader) throws IOException {
 
         String posoDescription = null;
-
-        reader.beginObject();
-        StringBuffer readData = new StringBuffer();
 
         while (reader.hasNext()) {
             String name = reader.nextName();

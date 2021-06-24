@@ -4,21 +4,20 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 
-public class Inhalers {
+public class Inhalers extends Chain{
     private static final String INHALERS_TAGNAME = "inhalers";
     private static final String NAME_FIELD_TAGNAME = "name";
     private static final String IMAGE_FIELD_TAGNAME = "image";
     private static final String FIELD_SEPARATOR = ";";
 
-    protected String readObjectEntry(String jsonFileName) throws IOException {
-        InputStream usersIS = new FileInputStream(new File(jsonFileName));
-        JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
+    public Inhalers(Chain suc) {
+        super(suc);
+        chainName = new String(INHALERS_TAGNAME);
+    }
 
+    protected String readObjectEntry(JsonReader reader) throws IOException {
         String inhaName = null;
         String inhaImage = null;
-
-        reader.beginObject();
-        StringBuffer readData = new StringBuffer();
 
         while (reader.hasNext()) {
             String name = reader.nextName();

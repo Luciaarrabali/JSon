@@ -4,7 +4,7 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 
-public class MedicinePresentations {
+public class MedicinePresentations extends Chain {
     private static final String MEDICINEPRESENTATIONS_TAGNAME = "medicinePresentations";
 
     private static final String MEDREF_FIELD_TAGNAME = "medicineRef";
@@ -14,18 +14,18 @@ public class MedicinePresentations {
     private static final String POSREF_FIELD_TAGNAME = "posologyRef";
     private static final String FIELD_SEPARATOR = ";";
 
-    protected String readObjectEntry(String jsonFileName) throws IOException {
-        InputStream usersIS = new FileInputStream(new File(jsonFileName));
-        JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
+    public MedicinePresentations(Chain suc) {
+        super(suc);
+        chainName = new String(MEDICINEPRESENTATIONS_TAGNAME);
+    }
+
+    protected String readObjectEntry(JsonReader reader) throws IOException {
 
         String medRef = null;
         String aiRef = null;
         String inhRef = null;
         String dose = null;
         String posRef = null;
-
-        reader.beginObject();
-        StringBuffer readData = new StringBuffer();
 
         while (reader.hasNext()) {
             String name = reader.nextName();

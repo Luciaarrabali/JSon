@@ -4,22 +4,21 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 
-public class Physiotherapies {
+public class Physiotherapies extends Chain{
     private static final String PHYSIOTHERAPIES_TAGNAME = "physiotherapies";
     private static final String NAME_FIELD_TAGNAME = "name";
     private static final String IMAGE_FIELD_TAGNAME = "image";
     private static final String FIELD_SEPARATOR = ";";
 
+    public Physiotherapies(Chain suc) {
+        super(suc);
+        chainName = new String(PHYSIOTHERAPIES_TAGNAME);
+    }
 
-    protected String readObjectEntry(String jsonFileName) throws IOException {
-        InputStream usersIS = new FileInputStream(new File(jsonFileName));
-        JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
+    protected String readObjectEntry(JsonReader reader) throws IOException {
 
         String physioName = null;
         String physioImage = null;
-
-        reader.beginObject();
-        StringBuffer readData = new StringBuffer();
 
         while (reader.hasNext()) {
             String name = reader.nextName();
