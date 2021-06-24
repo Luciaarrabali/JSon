@@ -28,7 +28,7 @@ public class Physiotherapies extends Chain{
                 reader.skipValue();
             }
         }
-        return physioName + FIELD_SEPARATOR + physioImage;
+        return physioName + " " + FIELD_SEPARATOR + " " + physioImage;
     }
 
 }

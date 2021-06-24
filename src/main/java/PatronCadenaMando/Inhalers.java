@@ -28,6 +28,6 @@ public class Inhalers extends Chain{
                 reader.skipValue();
             }
         }
-        return inhaName + FIELD_SEPARATOR + inhaImage;
+        return inhaName + FIELD_SEPARATOR + " " + inhaImage;
     }
 }

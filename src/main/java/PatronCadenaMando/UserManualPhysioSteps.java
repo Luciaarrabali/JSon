@@ -37,7 +37,7 @@ public class UserManualPhysioSteps extends Chain{
                 reader.skipValue();
             }
         }
-        return umPhyStepTitle + FIELD_SEPARATOR + umPhyStepImage + FIELD_SEPARATOR
-                + umPhyStepText + FIELD_SEPARATOR + umPhysioRef;
+        return umPhyStepTitle + FIELD_SEPARATOR + " " + umPhyStepImage + FIELD_SEPARATOR
+                + " " + umPhyStepText + FIELD_SEPARATOR + " " + umPhysioRef;
     }
 }

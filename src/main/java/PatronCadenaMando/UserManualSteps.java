@@ -37,7 +37,7 @@ public class UserManualSteps extends Chain{
                 reader.skipValue();
             }
         }
-        return umStepTitle + FIELD_SEPARATOR + umStepImage + FIELD_SEPARATOR
-                + umStepText + FIELD_SEPARATOR + umInhalerRef;
+        return umStepTitle + FIELD_SEPARATOR + " " + umStepImage + FIELD_SEPARATOR
+                + " " + umStepText + FIELD_SEPARATOR + " " + umInhalerRef;
     }
 }

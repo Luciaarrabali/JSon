@@ -165,7 +165,7 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return medRef + FIELD_SEPARATOR + aiRef + FIELD_SEPARATOR + inhRef + FIELD_SEPARATOR + dose;
+		return medRef + FIELD_SEPARATOR + " " + aiRef + FIELD_SEPARATOR + " " + inhRef + FIELD_SEPARATOR + " " + dose;
 	}
 
 	private StringBuffer readActiveIngredients(JsonReader reader) throws IOException {
@@ -222,7 +222,7 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return physioName + FIELD_SEPARATOR + physioImage;
+		return physioName + FIELD_SEPARATOR + " " + physioImage;
 	}
 
 	private StringBuffer readInhalers(JsonReader reader) throws IOException {
@@ -251,7 +251,7 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return inhaName + FIELD_SEPARATOR + inhaImage;
+		return inhaName + FIELD_SEPARATOR + " " + inhaImage;
 	}
 
 	private StringBuffer readPosologies(JsonReader reader) throws IOException {
@@ -336,8 +336,8 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return medRef + FIELD_SEPARATOR + aiRef + FIELD_SEPARATOR + inhRef + FIELD_SEPARATOR + dose + FIELD_SEPARATOR
-				+ posRef;
+		return medRef + FIELD_SEPARATOR + " " + aiRef + FIELD_SEPARATOR + " " + inhRef + FIELD_SEPARATOR + " " + dose + FIELD_SEPARATOR
+				+ " " + posRef;
 	}
 
 	private StringBuffer readUserManualPhysioSteps(JsonReader reader) throws IOException {
@@ -372,7 +372,7 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return umPhyStepTitle + FIELD_SEPARATOR + umPhyStepImage + FIELD_SEPARATOR + umPhyStepText + FIELD_SEPARATOR + umPhysioRef;
+		return umPhyStepTitle + FIELD_SEPARATOR + " " + umPhyStepImage + FIELD_SEPARATOR + " " + umPhyStepText + FIELD_SEPARATOR + " " + umPhysioRef;
 	}
 
 	private StringBuffer readUserManualSteps(JsonReader reader) throws IOException {
@@ -407,6 +407,6 @@ public class DatabaseJSonReader {
 				reader.skipValue();
 			}
 		}
-		return umStepTitle + FIELD_SEPARATOR + umStepImage + FIELD_SEPARATOR + umStepText + FIELD_SEPARATOR + umInhalerRef;
+		return umStepTitle + FIELD_SEPARATOR + " " + umStepImage + FIELD_SEPARATOR + " " + umStepText + FIELD_SEPARATOR + " " + umInhalerRef;
 	}
 }

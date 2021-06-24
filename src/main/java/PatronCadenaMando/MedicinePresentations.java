@@ -62,7 +62,7 @@ public class MedicinePresentations extends Chain {
                 reader.skipValue();
             }
         }
-        return medRef + FIELD_SEPARATOR + aiRef + FIELD_SEPARATOR + inhRef
-                + FIELD_SEPARATOR + dose + FIELD_SEPARATOR	+ posRef;
+        return medRef + FIELD_SEPARATOR + " " + aiRef + FIELD_SEPARATOR + " " + inhRef
+                + FIELD_SEPARATOR + " " + dose + FIELD_SEPARATOR + " " + posRef;
     }
 }
