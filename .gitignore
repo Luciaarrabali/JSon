@@ -27,3 +27,4 @@ hs_err_pid*
 /.idea/jarRepositories.xml
 /.idea/libraries/Maven__com_google_code_gson_gson_2_8_7.xml
 /JSon.iml
+/.idea/uiDesigner.xml
