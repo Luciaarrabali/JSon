@@ -16,6 +16,7 @@ public class Medicines {
 
         reader.beginObject();
         StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if(name.equals(NAME_FIELD_TAGNAME)){

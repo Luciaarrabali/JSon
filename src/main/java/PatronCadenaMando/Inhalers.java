@@ -17,6 +17,9 @@ public class Inhalers {
         String inhaName = null;
         String inhaImage = null;
 
+        reader.beginObject();
+        StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(NAME_FIELD_TAGNAME)) {

@@ -22,6 +22,9 @@ public class UserManualPhysioSteps {
         String umPhyStepText = null;
         String umPhysioRef = null;
 
+        reader.beginObject();
+        StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(STEPTITLE_FIELD_TAGNAME)) {

@@ -14,6 +14,10 @@ public class Posologies {
         JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
 
         String posoDescription = null;
+
+        reader.beginObject();
+        StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(DESCRIPTION_FIELD_TAGNAME)) {

@@ -24,6 +24,9 @@ public class MedicinePresentations {
         String dose = null;
         String posRef = null;
 
+        reader.beginObject();
+        StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(MEDREF_FIELD_TAGNAME)) {

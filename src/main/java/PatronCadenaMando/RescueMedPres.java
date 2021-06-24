@@ -16,6 +16,7 @@ public class RescueMedPres {
 
         reader.beginObject();
         StringBuffer readData = new StringBuffer();
+
         while (reader.hasNext()) {
             String medicineRef = reader.nextName();
             if(medicineRef.equals(MEDREF_FIELD_TAGNAME)){
