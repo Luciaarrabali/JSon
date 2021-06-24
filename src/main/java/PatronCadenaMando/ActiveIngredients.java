@@ -12,7 +12,7 @@ public class ActiveIngredients {
         InputStream usersIS = new FileInputStream(new File(jsonFileName));
         JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
 
-        String actIng = null;
+        String actIngName = null;
 
         reader.beginObject();
         StringBuffer readData = new StringBuffer();
@@ -20,11 +20,11 @@ public class ActiveIngredients {
         while (reader.hasNext()) {
             String name = reader.nextName();
             if(name.equals(NAME_FIELD_TAGNAME)){
-                actIng = reader.nextString();
+                actIngName = reader.nextString();
             } else{
                 reader.skipValue();
             }
         }
-        return actIng;
+        return actIngName;
     }
 }

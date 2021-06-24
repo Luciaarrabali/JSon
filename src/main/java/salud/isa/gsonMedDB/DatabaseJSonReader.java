@@ -102,7 +102,6 @@ public class DatabaseJSonReader {
 	// Parses the contents of a medicine.
 	private String readMedicineEntry(JsonReader reader) throws IOException {
 		// reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
-
 		String medName = null;
 
 		while (reader.hasNext()) {
@@ -183,16 +182,16 @@ public class DatabaseJSonReader {
 	}
 
 	private String readActiveIngredientEntry(JsonReader reader) throws IOException {
-		String actIng = null;
+		String actIngName = null;
 		while (reader.hasNext()) {
 			String name = reader.nextName();
 			if (name.equals(NAME_FIELD_TAGNAME)) {
-				actIng = reader.nextString();
+				actIngName = reader.nextString();
 			} else {
 				reader.skipValue();
 			}
 		}
-		return actIng;
+		return actIngName;
 	}
 
 	private StringBuffer readPhysiotherapies(JsonReader reader) throws IOException {
