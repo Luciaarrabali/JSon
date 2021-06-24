@@ -24,3 +24,6 @@ hs_err_pid*
 /.idea/workspace.xml
 /target/classes/datosshort.json
 /target/classes/datos.json
+/.idea/jarRepositories.xml
+/.idea/libraries/Maven__com_google_code_gson_gson_2_8_7.xml
+/JSon.iml
