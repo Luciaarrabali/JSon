@@ -18,7 +18,6 @@ public class Inhalers extends Chain{
     protected String readObjectEntry(JsonReader reader) throws IOException {
         String inhaName = null;
         String inhaImage = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(NAME_FIELD_TAGNAME)) {

@@ -16,10 +16,8 @@ public class Physiotherapies extends Chain{
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String physioName = null;
         String physioImage = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(NAME_FIELD_TAGNAME)) {

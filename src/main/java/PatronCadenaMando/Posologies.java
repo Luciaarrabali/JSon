@@ -14,9 +14,7 @@ public class Posologies extends Chain{
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String posoDescription = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(DESCRIPTION_FIELD_TAGNAME)) {

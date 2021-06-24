@@ -20,13 +20,11 @@ public class MedicinePresentations extends Chain {
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String medRef = null;
         String aiRef = null;
         String inhRef = null;
         String dose = null;
         String posRef = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(MEDREF_FIELD_TAGNAME)) {

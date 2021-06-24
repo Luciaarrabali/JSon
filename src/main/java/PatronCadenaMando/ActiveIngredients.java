@@ -13,7 +13,6 @@ public class ActiveIngredients extends Chain{
         chainName = new String(ACTIVEINGREDIENTS_TAGNAME);
     }
 
-    @Override
     protected String readObjectEntry(JsonReader reader) throws IOException {
         String actIngName = null;
         while (reader.hasNext()) {

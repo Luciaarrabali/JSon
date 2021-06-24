@@ -19,12 +19,10 @@ public class UserManualPhysioSteps extends Chain{
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String umPhyStepTitle = null;
         String umPhyStepImage = null;
         String umPhyStepText = null;
         String umPhysioRef = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(STEPTITLE_FIELD_TAGNAME)) {

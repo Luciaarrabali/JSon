@@ -19,12 +19,10 @@ public class UserManualSteps extends Chain{
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String umStepTitle = null;
         String umStepImage = null;
         String umStepText = null;
         String umInhalerRef = null;
-
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals(STEPTITLE_FIELD_TAGNAME)) {

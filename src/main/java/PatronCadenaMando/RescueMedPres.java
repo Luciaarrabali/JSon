@@ -15,10 +15,8 @@ public class RescueMedPres extends Chain {
     }
 
     protected String readObjectEntry(JsonReader reader) throws IOException {
-
         String medRef = null;
-
-        while (reader.hasNext()) {
+        while(reader.hasNext()) {
             String medicineRef = reader.nextName();
             if(medicineRef.equals(MEDREF_FIELD_TAGNAME)){
                 medRef = reader.nextString();
